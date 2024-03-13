@@ -9,10 +9,11 @@ use Livewire\Component;
 class Sorteio extends Component
 {
     public $winner = null;
+    public $random = false;
 
     public function mount()
     {
-        sleep(3);
+        // sleep(3);
     }
 
     public function placeholder(): string
@@ -32,6 +33,13 @@ class Sorteio extends Component
     #[On('candidate::created')]
     public function run()
     {
+        $candidates = Candidate::all();
+        foreach ($candidates as $candidate) {
+            $this->stream('winner', $candidate->name, true);
+            usleep(1000);
+        }
+
         $this->winner = Candidate::query()->inRandomOrder()->first()?->name;
+        $this->js('confetti()');
     }
 }

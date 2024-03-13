@@ -21,6 +21,6 @@ class DatabaseSeeder extends Seeder
             'email' => 'leonardolivelopes2@gmail.com',
         ]);
 
-        // Candidate::factory()->count(10)->create();
+        Candidate::factory()->count(100)->create();
     }
 }
