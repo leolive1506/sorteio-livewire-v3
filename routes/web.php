@@ -1,10 +1,14 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
+use function Laravel\Prompts\error;
+
 Route::get('/', function () {
-    return view('welcome');
+    Auth::loginUsingId(1);
+    return view ('welcome');
 });
 
 Route::get('/dashboard', function () {
