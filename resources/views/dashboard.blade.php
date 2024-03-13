@@ -11,7 +11,7 @@
                 <livewire:candidate.create />
 
                 <div class="p-6 text-gray-900 dark:text-gray-100">
-                    <livewire:sorteio />
+                    <livewire:sorteio lazy/>
                 </div>
             </div>
         </div>
