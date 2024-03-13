@@ -20,5 +20,6 @@ class Create extends Component
     {
         $this->validate();
         $this->form->save();
+        $this->dispatch('candidate::created');
     }
 }
